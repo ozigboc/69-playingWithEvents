@@ -17,7 +17,7 @@ const turnClockWise = () => {
 };
 
 const turnAntiClockWise = () => {
-  rotation += -90;
+  rotation -= 90;
   bug.style.transform = `rotate(${rotation}deg)`;
 };
 
@@ -59,3 +59,38 @@ leftBtn.addEventListener('click', stepLeft);
 homeBtn.addEventListener('click', home);
 turnClockWiseBtn.addEventListener('click', turnClockWise);
 turnAntiClockWiseBtn.addEventListener('click', turnAntiClockWise);
+
+// keyboard event
+
+document.addEventListener('keydown', function (event) {
+
+const {key} =event;
+switch(key) {
+  case 'ArrowUp':
+    stepUp();
+    break;
+    case 'ArrowDown':
+    stepDown();
+    break;
+    case 'ArrowLeft':
+      stepLeft();
+      break;
+      case 'ArrowRight' :
+        stepRight();
+        break;
+      case ']':
+        turnClockWise();
+        break;
+      case '[':
+      turnAntiClockWise();
+      break;
+      case 'H':
+      case 'h':
+        home();
+        break;
+
+        
+}
+
+}
+)
